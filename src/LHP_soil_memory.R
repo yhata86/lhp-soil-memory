@@ -513,7 +513,7 @@ p_wlch_W_30min <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-2.6}, y = 10^2.8,
-           label = paste0("italic(f)^", round(lm_W_obs_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_W_obs_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0)+
   annotate("text", x = Inf, y = Inf, label = "(a)", col = "black",
            size = size_anno, hjust = 1, vjust = 1)
@@ -556,7 +556,7 @@ p_wlch_PPT_30min_all <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-3.3}, y = 10^2.65,
-           label = paste0("italic(f)^", round(lm_PPT_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_PPT_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0)+
   annotate("text", x = 10^{-4.8}, y = 10^0.15,
            label = "italic(f)^0",
@@ -601,7 +601,7 @@ p_wlch_ET_30min <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-4.5}, y = 10^3.0,
-           label = paste0("italic(f)^", round(lm_ET_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_ET_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0)+
   annotate("text", x = Inf, y = Inf, label = "(c)", col = "black",
            size = size_anno, hjust = 1, vjust = 1)
@@ -644,7 +644,7 @@ p_wlch_Tr_30min <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-2.3}, y = 10^3.8,
-           label = paste0("italic(f)^", round(lm_Tr_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_Tr_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0)+
   annotate("text", x = Inf, y = Inf, label = "(d)", col = "black",
            size = size_anno, hjust = 1, vjust = 1)
@@ -684,7 +684,7 @@ p_wlch_Rs_30min_all <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-3.8}, y = 10^3.8,
-           label = paste0("italic(f)^", round(lm_Rs_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_Rs_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0)+
   annotate("text", x = Inf, y = Inf, label = "(e)", col = "black",
            size = size_anno, hjust = 1, vjust = 1)
@@ -725,7 +725,7 @@ p_wlch_VPD_30min_all <-
   geom_vline(xintercept = 1/8760, col = "black", lwd = lwd_vline,
              lty = "dotted")+
   annotate("text", x = 10^{-2.6}, y = 10^4,
-           label = paste0("italic(f)^", round(lm_VPD_30min$coef[2, 1], 3)),
+           label = paste0("italic(f)^", round(lm_VPD_30min$coef[2, 1], 2)),
            parse = TRUE, col = "black", size = size_anno, hjust = 0,
            vjust = 0.4)+
   annotate("text", x = Inf, y = Inf, label = "(f)", col = "black",
@@ -738,7 +738,7 @@ p_wlch_meteo_30min_all <-
 
 p_wlch_meteo_30min_all
 
-# ggsave(file = "./LHP_powerspec_meteo_30min_ver03.pdf",
+# ggsave(file = "./LHP_powerspec_meteo_30min_ver04.pdf",
 #        plot = p_wlch_meteo_30min_all, width = 190, height = 120,
 #        units = "mm", device = cairo_pdf)
 
