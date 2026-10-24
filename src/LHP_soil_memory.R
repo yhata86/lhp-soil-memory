@@ -1040,11 +1040,10 @@ p_1by1_ET_Tr <-
                      expand = expansion())+
   geom_point(aes(Tr, ET_CORR), col = "royalblue", size = 2,
              alpha = 0.3)+
-  geom_abline(slope = 1, intercept = 0, col = "gray30", lwd = 0.5, alpha = 0.8,
-              lty = "dashed")+
   geom_abline(slope = coef(lm_ET_Tr)[2, 1],
               intercept = coef(lm_ET_Tr)[1, 1],
-              col = "black", lwd = 0.8, alpha = 0.8)+
+              col = "gray40", lwd = 1.2, alpha = 0.8)+
+  geom_abline(slope = 1, intercept = 0, col = "black", lty = "dashed")+
   annotate("text", x = 0.35, y = 6.6,
            label = paste0("italic(y) ==", slp_ET, "*italic(x)+", int_ET),
            parse = TRUE, col = "black", size = 4, hjust = 0)+
@@ -1054,7 +1053,7 @@ p_1by1_ET_Tr <-
 
 p_1by1_ET_Tr
 
-# ggsave(file = "./LHP_ET_Tr_1by1_ver01.pdf",
+# ggsave(file = "./LHP_ET_Tr_1by1_ver02.pdf",
 #        plot = p_1by1_ET_Tr, width = 100, height = 100,
 #        units = "mm", device = cairo_pdf)
 
