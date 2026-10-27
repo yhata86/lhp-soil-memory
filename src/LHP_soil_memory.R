@@ -1760,11 +1760,7 @@ p_balance_ts_1by1 <-
      p_1by1_balance_obsTr_ns)+
   plot_layout(heights = c(3, 2))
 
-p_balance_ts_1by1
-
-# ggsave(file = "./LHP_SWC_validation_ts_1by1_ver02.pdf",
-#        plot = p_balance_ts_1by1, width = 190, height = 120,
-#        units = "mm", device = cairo_pdf)
+# p_balance_ts_1by1
 
 
 # generate artificial precipitation ---------------------------------------
@@ -2105,8 +2101,8 @@ p_memory_model <-
   scale_fill_manual(values = c("indianred2", "deepskyblue2", "gray80",
                                "gray50", "gray30", "gray10"), name = "")+
   geom_col(aes(model, memory/24, fill = model))+
-  annotate("text", x = 1, y = Inf, label = "(a)", col = "black",
-           size = size_anno_fignum, hjust = 1.3, vjust = 1)
+  annotate("text", x = 1, y = Inf, label = "(e)", col = "black",
+           size = size_anno_fignum, hjust = 1.2, vjust = 1)
 
 
 p_memory_meteo <-
@@ -2137,8 +2133,8 @@ p_memory_meteo <-
   scale_alpha_manual(values = c(1, 0.6, 0.2))+
   geom_col(aes(PPT, memory/24, fill = meteo, alpha = meteo),
            position = "dodge")+
-  annotate("text", x = 1, y = Inf, label = "(b)", col = "black",
-           size = size_anno_fignum, hjust = 1.6, vjust = 1)+
+  annotate("text", x = 1, y = Inf, label = "(f)", col = "black",
+           size = size_anno_fignum, hjust = 1.8, vjust = 1)+
   annotate("text", x = 0.52, y = 20, label = "Meteorology type",
            col = "black", size = size_legend_title, hjust = 0, vjust = 0.2)+
   annotate("rect", xmin = 0.52, xmax = 0.73, ymin = 18, ymax = 19,
@@ -2156,10 +2152,20 @@ p_memory_meteo <-
 
 p_memory <- p_memory_model | p_memory_meteo
 
-p_memory
+# p_memory
 
-# ggsave(file = "./LHP_memory_ver03.pdf",
-#        plot = p_memory, width = 190, height = 100,
+
+## merge two figures
+p_balance_ts_1by1_memory <-
+  p_W_ts_calib /
+  (p_1by1_balance_obsTr_sh | p_1by1_balance_obsTr_fx |
+     p_1by1_balance_obsTr_ns) / p_memory +
+  plot_layout(heights = c(1.2, 0.8, 1.5))
+
+p_balance_ts_1by1_memory
+
+# ggsave(file = "./LHP_SWC_validation_memory_ver01.pdf",
+#        plot = p_balance_ts_1by1_memory, width = 190, height = 220,
 #        units = "mm", device = cairo_pdf)
 
 
