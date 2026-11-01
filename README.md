@@ -2,6 +2,7 @@
 # lhp-soil-memory
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/1431606253.svg)](https://doi.org/10.5281/zenodo.23867649)
 <!-- badges: end -->
 
 This repository serves as an archive for the source code and datasets used in
